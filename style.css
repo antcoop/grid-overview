@@ -1,0 +1,91 @@
+html, * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  padding: 8px;
+  border: 2px solid red;
+  color: red;
+}
+
+h1 {
+  font-size: 6vw;
+  padding: 20;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  color: gray;
+}
+
+main {
+  display: grid;
+  width: 60%;
+  height: 100vh;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 56% 44%;
+  grid-template-areas: 
+    "latest latest latest latest subscribe subscribe"
+    "feature feature feature feature feature feature";
+}
+
+section:nth-child(1) {
+  background-color: #ffffff;
+  grid-area: latest;
+}
+
+section:nth-child(2) {
+  background-color: #C6E0DD;
+  grid-area: subscribe;
+}
+
+section:nth-child(3) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 20%;
+  grid-template-areas: 
+  ". image image story story ."
+  ". . tab-left tab-right . .";
+  background-color: #FFBF76;
+  grid-area: feature;
+}
+
+section:nth-child(1) > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+section:nth-child(3) > div:nth-child(1) {
+  background-color: gray;
+  grid-area: image;
+}
+
+section:nth-child(3) > div:nth-child(2) {
+  background-color: white;
+  padding: 40px 20px;
+  grid-area: story;
+}
+
+section:nth-child(3) > div:nth-child(3) {
+  background-color: rgb(0,0,0);
+  color: white;
+  grid-area: tab-left;
+}
+
+section:nth-child(3) > div:nth-child(4) {
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  grid-area: tab-right;
+}
