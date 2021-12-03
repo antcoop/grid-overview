@@ -11,12 +11,14 @@ body {
 button {
   padding: 8px;
   border: 2px solid red;
+  background-color: #ffffff;
+  font-size: 20px;
   color: red;
 }
 
 h1 {
   font-size: 6vw;
-  padding: 20;
+  padding: 20px;
 }
 
 h3 {
@@ -63,29 +65,65 @@ section:nth-child(3) {
 section:nth-child(1) > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 40px 60px;
   padding: 20px;
 }
 
 section:nth-child(3) > div:nth-child(1) {
   background-color: gray;
   grid-area: image;
+  box-shadow: 0 24px 24px rgba(0,0,0,0.25);
 }
 
 section:nth-child(3) > div:nth-child(2) {
   background-color: white;
   padding: 40px 20px;
   grid-area: story;
+  box-shadow: 0 24px 24px rgba(0,0,0,0.25);
 }
 
 section:nth-child(3) > div:nth-child(3) {
+  position: relative;
   background-color: rgb(0,0,0);
   color: white;
   grid-area: tab-left;
+  z-index: 1;
 }
 
 section:nth-child(3) > div:nth-child(4) {
+  position: relative;
   background-color: rgba(0,0,0,0.4);
   color: white;
   grid-area: tab-right;
+  z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "latest"
+      "subscribe"
+      "feature";
+  }
+  section:nth-child(1) > div {
+    grid-template-columns: 1fr;
+  }
+  section:nth-child(3) {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "image"
+    "story"
+    "tab-left"
+    "tab-right";
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  h1 {
+    font-size: 88px;
+  }
 }
